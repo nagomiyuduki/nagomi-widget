@@ -82,7 +82,7 @@
       .then(response => response.text())
       .then(text => {
         const lines = text.trim().split("\\n");
-        const headers = lines[0].split(",");
+        const headers = lines[0].split(",").map(h => h.replace(/"/g, "").trim());
         const idxTitle = headers.indexOf("タイトル");
         const idxDone = headers.indexOf("完了");
         const idxType = headers.indexOf("タイプ");
