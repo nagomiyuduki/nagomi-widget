@@ -83,10 +83,9 @@
       .then(text => {
         const lines = text.trim().split("\\n");
         const headers = lines[0].split(",").map(h => h.replace(/"/g, "").trim());
-        const idxTitle = headers.indexOf("title");
-        const idxDone = headers.indexOf("done");
-        const idxType = headers.indexOf("type");
-
+const idxTitle = headers.indexOf("タイトル");
+const idxDone = headers.indexOf("完了");
+const idxType = headers.indexOf("タイプ");
         if (idxTitle === -1 || idxDone === -1 || idxType === -1) {
           throw new Error("ヘッダーに必要な列が見つかりません（タイトル・完了・タイプ）");
         }
